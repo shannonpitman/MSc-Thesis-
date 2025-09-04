@@ -1,0 +1,96 @@
+\chapter{Methodology}
+\label{chap:methodology}
+
+The methodology chapter is the technical heart of an engineering report, providing a detailed account of \emph{how} the investigation was conducted. This chapter serves as a blueprint that enables other engineers to understand, evaluate, and potentially reproduce your work. It bridges the gap between the theoretical foundation established in the literature review and the empirical results that follow.
+
+A well-crafted methodology demonstrates engineering rigor through systematic approaches, justified design decisions, and transparent documentation of procedures. It establishes credibility by showing that results were obtained through sound engineering practices rather than ad-hoc experimentation. The methodology also provides the framework for interpreting results and assessing their validity and reliability.
+
+\section{Purpose and Scope of Engineering Methodology}
+
+The methodology chapter fulfills several critical functions in engineering documentation:
+
+\begin{itemize}
+\item \textbf{Reproducibility}: Provides sufficient detail for independent verification and replication of results.
+\item \textbf{Validation}: Demonstrates that methods are appropriate for addressing the stated objectives.
+\item \textbf{Transparency}: Documents assumptions, limitations, and potential sources of error.
+\item \textbf{Justification}: Explains why specific approaches were chosen over alternatives.
+\item \textbf{Quality assurance}: Shows adherence to relevant standards and best practices.
+\item \textbf{Risk management}: Identifies and addresses potential failure modes or uncertainties.
+\end{itemize}
+
+\section{Typical Structure and Content}
+
+An effective engineering methodology typically includes the following elements, adapted to your specific investigation:
+
+\begin{itemize}
+\item System overview and requirements specification.
+\item Experimental design and test planning.
+\item Hardware and software architecture.
+\item Data collection and preprocessing procedures.
+\item Analysis methods and computational models.
+\item Validation and verification protocols.
+\item Quality control and uncertainty quantification.
+\end{itemize}
+
+\section{System Overview and Architecture}
+
+Begin with a clear description of the overall system or approach. Use block diagrams, flowcharts, or system architecture figures to illustrate key components and their relationships.
+Define system requirements, performance specifications, and design constraints. This establishes the criteria against which your methodology will be evaluated.
+
+\section{Implementation Details}
+
+Document the specific tools, platforms, and configurations used. Provide sufficient detail for reproduction while maintaining focus on engineering-relevant specifications. For example, use tables to summarise technical specifications as shown in Table \ref{tab:method-specs}, below.
+
+\begin{table}[h]
+\centering
+\caption{Key hardware and software specifications for system implementation.}
+
+\begin{tabular}{l l}
+\toprule Component & Specification \\
+\midrule MCU & 120\,MHz Cortex-M4F \\
+Sensor & \textpm 2\,g MEMS accelerometer \\
+OS & Ubuntu 22.04 LTS \\
+Language & C/C++ and Python \\
+\bottomrule
+\end{tabular}
+\label{tab:method-specs}
+\end{table}
+
+\section{Procedures and Protocols}
+
+Present step-by-step procedures with specific parameters, tolerances, and measurement protocols. Reference relevant standards and best practices, such as calibration procedures per \cite{phad}. Include:
+
+\begin{itemize}
+\item Detailed experimental procedures.
+\item Measurement protocols and instrumentation.
+\item Data collection parameters (sampling rates, duration, conditions).
+\item Quality control checkpoints.
+\item Error handling and exception procedures.
+\end{itemize}
+
+\section{Data Processing and Analysis Framework}
+
+Describe your approach to data processing, analysis methods, and computational models. Include mathematical formulations where appropriate, such as the efficiency calculation:
+
+\begin{equation}
+\eta = \frac{P_{\text{out}}}{P_{\text{in}}}.
+\label{eq:efficiency}
+\end{equation}
+
+Document preprocessing steps, filtering approaches, and analytical techniques. Explain the rationale for chosen methods and any assumptions made.
+
+\section{Validation and Verification}
+
+Outline procedures for ensuring result validity and system verification. This might include:
+
+\begin{itemize}
+\item Calibration and measurement validation.
+\item Cross-validation techniques.  
+\item Sensitivity analysis.
+\item Comparison with theoretical predictions or benchmarks.
+\item Statistical significance testing.
+\end{itemize}
+
+\section{Assumptions and Limitations}
+
+Explicitly state all significant assumptions and acknowledge methodological limitations. This transparency strengthens rather than weakens your work by demonstrating awareness of constraints and potential sources of uncertainty. The methodology should demonstrate that your approach is systematic, rigorous, and appropriate for addressing your stated objectives while acknowledging the practical constraints within which the work was conducted.

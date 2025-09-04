@@ -1,0 +1,46 @@
+\chapter{Literature Review}
+\label{chap:litreview}
+
+The literature review establishes the theoretical and practical foundation for your engineering investigation. This chapter demonstrates your understanding of the current state of knowledge in your field, critically evaluates existing solutions, and identifies the specific gap that justifies your project. Unlike a simple summary of sources, an engineering literature review synthesises prior work to build a compelling case for your approach and methodology.
+
+A well-structured literature review serves multiple purposes: it positions your work within the broader engineering context, demonstrates awareness of existing solutions and their limitations, provides evidence for design decisions, and establishes credibility through engagement with peer-reviewed sources. This chapter should guide the reader from general background knowledge to the specific problem your project addresses.
+
+\section{Typical Structure and Content}
+
+An effective engineering literature review typically includes the following elements:
+
+\begin{itemize}
+\item \textbf{Scope and search strategy}: Define the boundaries of your review and explain how you identified relevant sources.
+\item \textbf{Thematic synthesis of prior work}: Organise literature around key themes, technologies, or approaches rather than chronologically.
+\item \textbf{Comparative analysis}: Systematically compare methods, performance metrics, and limitations across different approaches.
+\item \textbf{Technical evaluation}: Assess the engineering merit of different solutions, including scalability, reliability, and practical constraints.
+\item \textbf{Identified research or practice gap}: Clearly articulate what remains unsolved or inadequately addressed.
+\item \textbf{Implications for your methodology}: Connect the literature directly to your design choices and experimental approach
+\end{itemize}
+
+\section{Citation Practice and Source Integration}
+
+Use the \texttt{natbib} package commands to integrate sources naturally into your technical narrative. For example, \cite{ryalat_integration_2024} demonstrated the integration of mechatronic systems in Industry 4.0 applications, while comparative studies \cite{phad} have shown the benefits of cyber-physical system approaches. 
+
+Organise complex comparisons using tables, such as Table \ref{tab:lit-taxonomy} below, to help readers understand the landscape of existing solutions:
+
+\begin{table}[h]
+\centering
+\caption{Example taxonomy of mechatronic system approaches in modern engineering applications.}
+\begin{tabular}{p{2.5cm}p{2.5cm}p{2.5cm}p{2.5cm}}
+\toprule 
+Approach & Application Domain & Key Technology & Performance Metric \\
+\midrule 
+Smart Manufacturing & Industrial & IoT + AI & Efficiency (\%) \\
+Soft Robotics & Automation & Advanced Materials & Flexibility \\
+Cyber-Physical Systems & Integration & Real-time Control & Response Time (ms) \\
+\bottomrule
+\end{tabular}
+\label{tab:lit-taxonomy}
+\end{table}
+
+\section{Critical Analysis and Research Gap}
+
+The literature review should culminate in a clear identification of the gap your project addresses. This gap might be a technical limitation in existing solutions, an unexplored application domain, a need for improved performance metrics, or insufficient validation under realistic operating conditions. 
+
+Articulate how the limitations and strengths identified in the literature directly inform your project objectives and methodology choices. This connection ensures that your approach is grounded in evidence and addresses a genuine need.

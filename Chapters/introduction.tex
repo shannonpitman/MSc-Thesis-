@@ -1,0 +1,54 @@
+\chapter{Introduction}
+\label{introduction}
+
+This chapter orients the reader: It describes what the report is about, why it matters, what will be covered, and how the document is organised. Keep it clear, concise and specific to the engineering context. Use forward references to later chapters to help the reader. Keep the Introduction brief; move technical depth to later chapters.
+
+
+\section{Subject and motivation for report}
+State, in one or two sentences, the subject of the report and why it matters to the stakeholder. For example: ``This report describes the main sections and features of an engineering report template.'' Briefly mention the engineering motivation (performance, cost, safety, reliability, sustainability) and link it to measurable needs or constraints. The first sentence in this section should capture the essence of what this report is about.
+
+\section{Background to investigation}
+Provide context that sets the scene for the reader: prior events, relevant standards, existing systems, or operational constraints. Keep this factual and short; defer in-depth theory to the Literature Review (Chapter~\ref{chap:litreview}). Figures may be used if they are relevant to the report, for examples in a project on mechatronic design, you may want to introduce the field of mechatronics using a diagream such as Figure \ref{fig:mechatronics_venn_diagram}.
+
+\begin{figure}[b]
+\centering
+\includegraphics[width=.5\textwidth]{Figures/mechatronics_venn_diagram.png}
+\caption{The overlap of traditional discplines comprising the field of mechatronics \citep{ryalat_integration_2024}.}
+\label{fig:mechatronics_venn_diagram}
+\end{figure}
+
+Here, it can be seen that mechatronics is an interdisciplinary field that draws on the principles of mechanics, electronics, computer science, and control systems to design and develop intelligent machines and systems. Typically projects offered by the MechatronicSystems.Group are related to the discisplines within this diagram.
+
+\section{Objectives of report}
+State what the report will achieve. Use action verbs and make objectives measurable. For a typical mechatronics project, the specific objectives might be to:
+\begin{itemize}
+  \item Design and implement a control system for an autonomous mobile robot capable of obstacle avoidance and path following.
+  \item Develop sensor fusion algorithms integrating \ac{IMU}, ultrasonic, and camera data for real-time navigation.
+  \item Evaluate system performance through quantitative metrics including positioning accuracy (± 5cm), response time (<100 ms), and reliability (>95\% success rate).
+  \item Validate the integrated mechatronic system under controlled laboratory conditions and document design trade-offs.
+\end{itemize}
+
+\section{Limitations and scope of investigation}
+Clarify boundaries so the reader knows what is and is not covered. Indicate factors that influenced scope (e.g., time, cost, equipment availability, data access). Note populations, sites, subsystems, or operating conditions included and excluded. Explicitly state assumptions.
+
+\begin{table}[h]
+\centering
+\caption{Typical scope boundaries for a mechatronics project; adapt to your specific investigation.}
+\begin{tabular}{l l}
+\toprule In scope & Out of scope \\
+\midrule Indoor navigation on flat surfaces & Outdoor terrain and weather conditions \\
+Obstacle detection and avoidance & Dynamic obstacle tracking \\
+Real-time control at 50 Hz update rate & High-frequency vibration analysis \\
+Laboratory testing environment & Industrial deployment scenarios \\
+Single robot operation & Multi-robot coordination \\
+Basic machine learning algorithms & Deep learning implementations \\
+Prototype-level manufacturing & Production-ready design optimization \\
+Safety systems for laboratory use & Commercial safety certifications \\
+\bottomrule
+\end{tabular}
+\label{tab:intro-scope}
+\end{table}
+
+\section{Plan of development}
+Explain how the report is organised so the reader can navigate it. This report follows a structured approach that builds systematically from foundational knowledge to practical outcomes. Chapter~\ref{chap:litreview} begins by synthesising relevant prior work and identifying the gap that this investigation addresses. Following this theoretical foundation, Chapter~\ref{chap:methodology} details the methods, data, and validation procedures employed in the study. The empirical findings are then presented in Chapter~\ref{chap:results}, which displays results through figures and tables without interpretation, allowing the data to speak for itself. Chapter~\ref{chap:discussion} subsequently interprets these results, comparing them to existing literature and discussing any limitations encountered. The investigation concludes with Chapter~\ref{chap:conclusions}, which answers the stated objectives concisely, followed by Chapter~\ref{chap:recommendations} that provides actionable recommendations and outlines future work opportunities.
+

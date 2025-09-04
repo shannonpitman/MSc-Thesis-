@@ -1,0 +1,12 @@
+*.DS_Store
+*.synctex.gz
+*.fdb_latexmk
+*.fls
+*.log
+*.aux
+*.bbl
+*.blg
+*.toc
+*.lof
+*.lot
+*.out

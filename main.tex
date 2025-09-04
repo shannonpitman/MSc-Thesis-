@@ -1,0 +1,223 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% MechatronicSystems.Group Latex Template, based on:
+% Maggi Memoir Thesis
+% XeLaTeX Template
+% Version 1.0 (04/09/25)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original authors:
+% Federico Maggi (fede@maggi.cc) with extensive modifications by:
+% James Hepworth (james.hepworth@uct.ac.za)
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+% Important notes:
+% This template needs to be compiled with XeLaTeX.
+%
+% Most of the document content and packages are specified within structure.tex
+% so if you need to make modifications to the template have a look there first!
+%
+% This template uses several fonts that are not available on most operating 
+% systems by default. These are: EB Garamond, Envy Code R and 
+% Optima Regular. You will either need to obtain these and install them on your
+% system or change them to different fonts. Simply go to the Fonts block just
+% below here and modify their names to other fonts. You can also comment them 
+% out completely to use the default LaTeX font.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[11pt,a4paper,oneside]{memoir} % Change font size here (allowable values are 9pt-12pt), change the paper size, specify one or two sided printing and specify whether to show trimming lines
+
+\input{structure.tex} % Include the file containing the code defining the structure and style of the document
+
+%------------------------------------------------
+% Thesis Information
+\newcommand{\themonth}{September 2025} % The month of writing    
+
+\title{A (\emph{likely incomplete}) Guide to Writing Engineering Dissertations} % Thesis title
+
+\renewcommand{\author}{James Hepworth} % Author name
+
+\date{}
+
+% Supervisor
+\newcommand{\supervisor}{Claude 4 Sonnet}
+
+\newcommand{\institution}{University of Cape Town\xspace} % University/institution name
+
+\newcommand{\reseachgroup}{\href{http://mechatronicsystems.group}{MechatronicsSystems.Group}\xspace} % University/institution name
+
+\newcommand{\department}{Department of Mechanical Engineering\xspace} % Department name
+
+\newcommand{\degree}{BSc (Eng) in Mechanical and Mechatronic Engineering}
+
+%------------------------------------------------
+% Fonts
+
+\defaultfontfeatures{Mapping=tex-text}
+\setromanfont[Ligatures={Common}]{EB Garamond} % Normal document font
+\setmonofont[Scale=0.8]{Envy Code R} % Mono spaced font (\texttt{})
+\setsansfont[Scale=0.9]{Optima Regular} % Sans-serif font (\textsf{})
+
+\renewcommand*{\acffont}[1]{{\normalsize\itshape #1}} % Font style for the acronym text (e.g. Do It Yourself)
+\renewcommand*{\acfsfont}[1]{{\normalsize\upshape #1}} % Font style for the acronym in bracket (e.g. (DIY))
+
+%------------------------------------------------
+% Hyphenations
+
+\hyphenation{a-no-ma-lous a-no-ma-ly amounts breaches} % Specify custom hyphenation points in words with dashes where you would like hyphenation to occur, or alternatively, don't put any dashes in a word to stop hyphenation altogether
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\renewcommand{\maketitlehooka}{}
+
+\renewcommand{\maketitlehookb}{
+\centering
+\vfill
+\includegraphics[width=0.6\linewidth]{Figures/UCT_MSG_wide.png}\\[0.5cm] % Institution logo
+\par
+\hrulefill}
+
+\renewcommand{\maketitlehookc}{
+% People details left, institution info right
+\noindent
+\begin{tabular*}{\textwidth}{@{} l @{\extracolsep{\fill}} r}
+    \textbf{Author:} \author &  \reseachgroup \\
+    \textbf{Supervisor:} \supervisor & \department\\
+    \textbf{Date:} \themonth & \institution\\
+\end{tabular*}
+
+\vspace{1cm}
+
+\emph{Submitted in partial fulfilment of the requirements for the degree of} \\
+\degree
+}
+
+%----------------------------------------------------------------------------------------
+
+\makeindex % Write an index file
+
+\begin{document}
+
+\begin{titlingpage}
+\maketitle % Print the title page
+\end{titlingpage}
+
+\frontmatter % Use roman page numbering style (i, ii, iii, iv...) for the pre-content pages
+
+%----------------------------------------------------------------------------------------
+%	ABSTRACT
+%----------------------------------------------------------------------------------------
+
+\chapterstyle{default} % Apply thesis chapter style
+\chapter*{Abstract}
+%\addcontentsline{toc}{chapter}{Abstract} % Add to table of contents
+
+Engineering students often need a clear, practical model for writing dissertations; this document provides an overview tailored to final‑year mechatronics projects and demonstrates effective use of a LaTeX thesis template. Many student reports lack consistent structure, rigorous scoping, and appropriate use of figures, tables, code listings, and citations, which impedes readability and assessment.
+
+This work contributes an exemplar that explains what each report section should contain, offers typical subheadings, and embeds working examples of template elements to copy and adapt. The document is implemented in XeLaTeX using the \texttt{memoir} class with chapters for Introduction, Literature Review, Methodology, Results, Discussion, Conclusions, Recommendations, and Appendices, along with acronyms and bibliography support; the result is a shareable guide that doubles as a starting point for students to produce professional, evidence‑based engineering reports.
+\vspace*{1cm}
+
+\subsection*{\emph{How to write an abstract in 5 minutes?}}
+
+\begin{flushright}
+\textit{Answer the following questions in narrative form with no more than two sentences per question:}
+
+\begin{itemize}
+    \item \textit{What is the background to the project?}
+    \item \textit{What is the problem that is being solved?}
+    \item \textit{What is the contribution of the project to this problem?}
+    \item \textit{What is the main conclusion of the project?}
+\end{itemize}
+\end{flushright}
+
+
+\cleartoverso % Force a break to an even page
+
+%----------------------------------------------------------------------------------------
+%	TABLE OF CONTENTS
+%----------------------------------------------------------------------------------------
+
+%\renewcommand{\contentsname}{\chapnamefont\fontsize{14}{14}\selectfont Contents}
+\tableofcontents* % Print the table of contents
+
+\cleartoverso % Force a break to an even page
+
+%----------------------------------------------------------------------------------------
+%	LIST OF FIGURES
+%----------------------------------------------------------------------------------------
+
+%\renewcommand{\listfigurename}{\chapnamefont\fontsize{14}{14}\selectfont List of Figures}
+\listoffigures % Print the list of figures
+
+\cleartoverso % Force a break to an even page
+
+%----------------------------------------------------------------------------------------
+%	LIST OF TABLES
+%----------------------------------------------------------------------------------------
+
+%\renewcommand{\listtablename}{\chapnamefont\fontsize{14}{14}\selectfont List of Tables}
+\listoftables % Print the list of tables
+
+\cleartoverso % Force a break to an even page
+
+%----------------------------------------------------------------------------------------
+%	ACRONYMS
+%----------------------------------------------------------------------------------------
+
+\include{acronyms} % Include a List of Acronyms section using acronyms.tex where they are defined
+
+\cleartoverso % Force a break to an even page
+
+
+%----------------------------------------------------------------------------------------
+%	CONTENT CHAPTERS
+%----------------------------------------------------------------------------------------
+
+\mainmatter % Begin numeric (1,2,3...) page numbering
+
+\chapterstyle{thesis} % Change the style of the Chapter header to that defined in structure.tex
+
+\pagestyle{Ruled} % Include the chapter/section in the header along with a horizontal rule underneath
+
+\include{Chapters/introduction} % Include the introduction chapter
+\include{Chapters/literature_review} % Literature Review
+\include{Chapters/methodology} % Methodology
+\include{Chapters/results} % Results/Findings
+\include{Chapters/discussion} % Discussion
+\include{Chapters/conclusions} % Conclusions
+\include{Chapters/recommendations} % Recommendations
+
+\chapterstyle{default} % Reset the chapter style back to the default used for non-content chapters
+
+
+
+%----------------------------------------------------------------------------------------
+%	REFERENCES
+%----------------------------------------------------------------------------------------
+\printbibliography[title={References}] % Uses biblatex/biber
+
+%----------------------------------------------------------------------------------------
+% APPENDICES
+%----------------------------------------------------------------------------------------
+\chapterstyle{thesis} % Change the style of the Chapter header to that defined in structure.tex
+\include{Chapters/appendices}
+
+%----------------------------------------------------------------------------------------
+%	INDEX
+%----------------------------------------------------------------------------------------
+
+\printindex % Print the index
+
+%----------------------------------------------------------------------------------------
+
+\end{document}
