@@ -10,3 +10,9 @@
 *.lof
 *.lot
 *.out
+*.idx
+*.ilg
+*.ind
+*.run.xml
+*.xdv
+.latex/
