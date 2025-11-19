@@ -1,46 +1,118 @@
 \chapter{Literature Review}
 \label{chap:litreview}
 
-The literature review establishes the theoretical and practical foundation for your engineering investigation. This chapter demonstrates your understanding of the current state of knowledge in your field, critically evaluates existing solutions, and identifies the specific gap that justifies your project. Unlike a simple summary of sources, an engineering literature review synthesises prior work to build a compelling case for your approach and methodology.
+[insert introductory para to lit review. Include scope and search strategy]
 
-A well-structured literature review serves multiple purposes: it positions your work within the broader engineering context, demonstrates awareness of existing solutions and their limitations, provides evidence for design decisions, and establishes credibility through engagement with peer-reviewed sources. This chapter should guide the reader from general background knowledge to the specific problem your project addresses.
+\section{Optimising Camera Placement}
+Problem Statement + Applications:
+Marker based tracking so position of markers can e tracked \parencite{zieglerOptimalCameraPlacement2023} - in general markers must be visible by at least two cameras in ordr to calc their respective 3D positions via triangulation  
+Need application domains from notes: 
+VSNs (Visual Sensor Networks) are used in the following industries 
+1. surveillance
+2. object detection
+3. motion tracking
+4. patient monitoring  
+WHile buidling visual sensor networks, variables like sensor number, location, and orientation (i.e sensor placement optimisation problem) have a significant impact on coverage and performance of the system to identify and monitor the target \parencite{ZHou}. 
+Explain a multi-camera system + robust views 
+How does camera placement affect results
+Constraints: mounting, cost - potential wiring 
+Tension between coverage and accuracy
+Adding more cameras could assist in mitigating the issue of occlusion and having robust camera visibility, drives up cost and processing complexity. Usually the limited amount of cameras are arranged and configured by hand, which requires expertise, trial and error. Eventhough, anticpated motion of the target may not be known exactly beforehand configuraing a camera network based on metrics that minimise the effect of resolution degredation and triangulation could benefit the system.  
 
-\section{Typical Structure and Content}
+Objectives of Optimization
+- what has research optimised for: coverage based objectives (minimise blind spots, maximise visible area) vs accuracy-based (3D reconstruction quality, minimise resolution degredation, trinangulation accuracy).
+- Diagram for triangulation + definition 
 
-An effective engineering literature review typically includes the following elements:
+Different Methods to achieve and find an optimised camera config 
+- synthesis of how field developed 
+- timeline 
+- comparison of different approaches 
+- thematic overview of developing approaches and literature comparison
+Resolution:
+Wu and Sharma
+Aissaoui 
 
-\begin{itemize}
-\item \textbf{Scope and search strategy}: Define the boundaries of your review and explain how you identified relevant sources.
-\item \textbf{Thematic synthesis of prior work}: Organise literature around key themes, technologies, or approaches rather than chronologically.
-\item \textbf{Comparative analysis}: Systematically compare methods, performance metrics, and limitations across different approaches.
-\item \textbf{Technical evaluation}: Assess the engineering merit of different solutions, including scalability, reliability, and practical constraints.
-\item \textbf{Identified research or practice gap}: Clearly articulate what remains unsolved or inadequately addressed.
-\item \textbf{Implications for your methodology}: Connect the literature directly to your design choices and experimental approach
-\end{itemize}
 
-\section{Citation Practice and Source Integration}
+Occlusion
+Chen and Davis 
+Rahimian et al 
 
-Use the \texttt{natbib} package commands to integrate sources naturally into your technical narrative. For example, \cite{ryalat_integration_2024} demonstrated the integration of mechatronic systems in Industry 4.0 applications, while comparative studies \cite{phad} have shown the benefits of cyber-physical system approaches. 
+- table cols [Method | Literature | Problem Scale | Pros | Cons ], rows: Heuristics: (GA, PSO, SA) Integer Programming (Branch and bound) 
+- Make choice of GA defensible by comaprison 
 
-Organise complex comparisons using tables, such as Table \ref{tab:lit-taxonomy} below, to help readers understand the landscape of existing solutions:
+What I specifically took from each paper, why -> how it connects to my work 
+examples of multi-objective camera placement 
 
-\begin{table}[h]
-\centering
-\caption{Example taxonomy of mechatronic system approaches in modern engineering applications.}
-\begin{tabular}{p{2.5cm}p{2.5cm}p{2.5cm}p{2.5cm}}
-\toprule 
-Approach & Application Domain & Key Technology & Performance Metric \\
-\midrule 
-Smart Manufacturing & Industrial & IoT + AI & Efficiency (\%) \\
-Soft Robotics & Automation & Advanced Materials & Flexibility \\
-Cyber-Physical Systems & Integration & Real-time Control & Response Time (ms) \\
-\bottomrule
-\end{tabular}
-\label{tab:lit-taxonomy}
-\end{table}
+research gap -> few incorporate realistic occlusion models 
+no open-source implementation 
 
-\section{Critical Analysis and Research Gap}
+Contribution Statement: integrates res uncertainty (3D-ellipsoid) with dynamic occlusion. real-doded GA with guided initialisation validated against an OptiTrack commercial system 
 
-The literature review should culminate in a clear identification of the gap your project addresses. This gap might be a technical limitation in existing solutions, an unexplored application domain, a need for improved performance metrics, or insufficient validation under realistic operating conditions. 
 
-Articulate how the limitations and strengths identified in the literature directly inform your project objectives and methodology choices. This connection ensures that your approach is grounded in evidence and addresses a genuine need.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+% The literature review establishes the theoretical and practical foundation for your engineering investigation. This chapter demonstrates your understanding of the current state of knowledge in your field, critically evaluates existing solutions, and identifies the specific gap that justifies your project. Unlike a simple summary of sources, an engineering literature review synthesises prior work to build a compelling case for your approach and methodology.
+
+% A well-structured literature review serves multiple purposes: it positions your work within the broader engineering context, demonstrates awareness of existing solutions and their limitations, provides evidence for design decisions, and establishes credibility through engagement with peer-reviewed sources. This chapter should guide the reader from general background knowledge to the specific problem your project addresses.
+
+% \section{Typical Structure and Content}
+
+% An effective engineering literature review typically includes the following elements:
+
+% \begin{itemize}
+% \item \textbf{Scope and search strategy}: Define the boundaries of your review and explain how you identified relevant sources.
+% \item \textbf{Thematic synthesis of prior work}: Organise literature around key themes, technologies, or approaches rather than chronologically.
+% \item \textbf{Comparative analysis}: Systematically compare methods, performance metrics, and limitations across different approaches.
+% \item \textbf{Technical evaluation}: Assess the engineering merit of different solutions, including scalability, reliability, and practical constraints.
+% \item \textbf{Identified research or practice gap}: Clearly articulate what remains unsolved or inadequately addressed.
+% \item \textbf{Implications for your methodology}: Connect the literature directly to your design choices and experimental approach
+% \end{itemize}
+
+% \section{Citation Practice and Source Integration}
+
+% Use the \texttt{natbib} package commands to integrate sources naturally into your technical narrative. For example, \cite{ryalat_integration_2024} demonstrated the integration of mechatronic systems in Industry 4.0 applications, while comparative studies \cite{phad} have shown the benefits of cyber-physical system approaches. 
+
+% Organise complex comparisons using tables, such as Table \ref{tab:lit-taxonomy} below, to help readers understand the landscape of existing solutions:
+
+% \begin{table}[h]
+% \centering
+% \caption{Example taxonomy of mechatronic system approaches in modern engineering applications.}
+% \begin{tabular}{p{2.5cm}p{2.5cm}p{2.5cm}p{2.5cm}}
+% \toprule 
+% Approach & Application Domain & Key Technology & Performance Metric \\
+% \midrule 
+% Smart Manufacturing & Industrial & IoT + AI & Efficiency (\%) \\
+% Soft Robotics & Automation & Advanced Materials & Flexibility \\
+% Cyber-Physical Systems & Integration & Real-time Control & Response Time (ms) \\
+% \bottomrule
+% \end{tabular}
+% \label{tab:lit-taxonomy}
+% \end{table}
+
+% \section{Critical Analysis and Research Gap}
+
+% The literature review should culminate in a clear identification of the gap your project addresses. This gap might be a technical limitation in existing solutions, an unexplored application domain, a need for improved performance metrics, or insufficient validation under realistic operating conditions. 
+
+% Articulate how the limitations and strengths identified in the literature directly inform your project objectives and methodology choices. This connection ensures that your approach is grounded in evidence and addresses a genuine need.
