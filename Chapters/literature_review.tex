@@ -4,38 +4,43 @@
 [insert introductory para to lit review. Include scope and search strategy]
 
 \section{Optimising Camera Placement}
+(OCP)
 Problem Statement + Applications:
-Marker based tracking so position of markers can e tracked \parencite{zieglerOptimalCameraPlacement2023} - in general markers must be visible by at least two cameras in ordr to calc their respective 3D positions via triangulation  
+Art Gallery problem -> how many guards, wich can survey a full 360 degrees is the minimum to cover the room shaped as a simple polygon. Obvious assumptions of two-dimensions, full 360 degrees field of view, no limited range of sight. Thus, it can be extended to the camera placement problem by adding constraints 
+Marker based tracking so position of markers can e tracked \parencite{zieglerOptimalCameraPlacement2023} - in general markers must be visible by at least two cameras in order to calc their respective 3D positions via triangulation and thus motion can be tracked \parencite{aissaouiDesigningCameraPlacement2018}  
 Need application domains from notes: 
 VSNs (Visual Sensor Networks) are used in the following industries 
-1. surveillance
+1. surveillance \parencite{bodorOptimalCameraPlacement2007}
 2. object detection
-3. motion tracking
-4. patient monitoring  
-WHile buidling visual sensor networks, variables like sensor number, location, and orientation (i.e sensor placement optimisation problem) have a significant impact on coverage and performance of the system to identify and monitor the target \parencite{ZHou}. 
+3. motion capture \parencite{aissaouiDesigningCameraPlacement2018, zieglerOptimalCameraPlacement2023}
+4. Augmented and virtual reality systems \parencite{rahimianOptimalCameraPlacement2017} 
+5. Autonomous Driving \parencite{puligandlaMultiresolutionApproachLarge2022}
+While building visual sensor networks, variables like sensor number, location, and orientation (i.e sensor placement optimisation problem) have a significant impact on coverage and performance of the system to identify and monitor the target \parencite{zhouSensorPlacementOptimization2024}. 
 Explain a multi-camera system + robust views 
 How does camera placement affect results
 Constraints: mounting, cost - potential wiring 
 Tension between coverage and accuracy
-Adding more cameras could assist in mitigating the issue of occlusion and having robust camera visibility, drives up cost and processing complexity. Usually the limited amount of cameras are arranged and configured by hand, which requires expertise, trial and error. Eventhough, anticpated motion of the target may not be known exactly beforehand configuraing a camera network based on metrics that minimise the effect of resolution degredation and triangulation could benefit the system.  
+Adding more cameras could assist in mitigating the issue of occlusion and having robust camera visibility, drives up cost and processing complexity. Usually the limited amount of cameras are arranged and iteractively configured by hand, which requires expertise, trial and error whihc can be time-consuming or sacrificial if a sub-par arrangement is settled on. Eventhough, anticpated motion of the target may not be known exactly beforehand configuraing a camera network based on metrics that minimise the effect of resolution degredation and triangulation could benefit the system.  
 
 Objectives of Optimization
+The configuration quality for 3D marker tracking and trinagulation is mostly affected y two main sources of error: marker visibility and triangulation accuracy. A marker should not be occluded by any obstacle, including itself, the marker must be within the cameras field of view, vissible given the camera's resolution and range of capture. At least two cameras should be arranged sufficiently non-parallel so that triangulation is well-conditioned. The least amount of cameras is required to achieve this to minimise cost.  
 - what has research optimised for: coverage based objectives (minimise blind spots, maximise visible area) vs accuracy-based (3D reconstruction quality, minimise resolution degredation, trinangulation accuracy).
 - Diagram for triangulation + definition 
 
 Different Methods to achieve and find an optimised camera config 
+Prior research has focused on two main factors that contribute to unaccurate reconstruction (1) minimise error due to inaccurate triangulation and (2) placing cameras to provide the best views in the presence of occlusion. 
 - synthesis of how field developed 
 - timeline 
 - comparison of different approaches 
 - thematic overview of developing approaches and literature comparison
 Resolution:
-Wu and Sharma
+Wu, Sharma, and Huang introduced the intersection of projected pyramids to present a  numerical measurement of uncertainty bounds. 
 Aissaoui 
 
 
 Occlusion
-Chen and Davis 
-Rahimian et al 
+Chen and Davis: introduce the probabilistic model of occlusion
+Rahimian et al: convergence angle of cameras 
 
 - table cols [Method | Literature | Problem Scale | Pros | Cons ], rows: Heuristics: (GA, PSO, SA) Integer Programming (Branch and bound) 
 - Make choice of GA defensible by comaprison 
@@ -50,6 +55,13 @@ Contribution Statement: integrates res uncertainty (3D-ellipsoid) with dynamic o
 
 
 
+Method:
+- user to specify the number of cameras and possible camera locations for placement (mounting)
+- parallel processing 
+- we empirically test the methods against the ad hoc placement of the OptiTrack system in our laboratory - which was designed for a specific capture volume 
+- placement based on optimising for visibility without considering robustness to dynamic occlusion
+- placement based solely on robustness to occlusion without regard for degrading resolution
+- a combined cost function of the two concerns 
 
 
 
