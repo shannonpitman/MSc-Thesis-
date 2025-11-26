@@ -1,31 +1,28 @@
 \chapter{Literature Review}
 \label{chap:litreview}
-
-[insert introductory para to lit review. Include scope and search strategy]
+Indoor localisation systems require a distributed sensor network that are strategically positioned for applications that may prioritise coverage of a large space, sufficient views for elaborate motion or placement to reduce the effects of Geometric Dilution of Precision (GDOP)  \parencite{kirchhofOptimalPlacementMultiple2013}. The sensor placement problem is an optimisation task that involves determining the amount and location of these systems as the localisation error depends both on the quality of the sensor measurements and on the sensor placement. This section will explore the multiple approaches taken over the year in the Optimal Camera Placement (OCP) problem both in the development of issues addressed and optimisation methods used. 
 
 \section{Optimising Camera Placement}
-(OCP)
+The OCP is a more fleshed out descendent of the well studied Art Gallery Problem (AGP) where it was investigated how many guards it would be necessary to cover the entire 2D $$n$$ vertices polygon "Art Gallery". It came with many simplifications such as it was assumed that the guards had a full $$360 \degrees$$ field of view (FOV), no limited range of sight and that the entire problem only existed in two-dimensiions. It was concluded elegantly in Fisk's work that $$\frac{n}{3}$$ guards can sufficiently (and occasionally necessary) cover any simple polygon of $$n$$ vertices based on 3-colouring and triangulation as seen in the figure below. In this case, the polygon has $$n=13$$ vertices and by aplying Fisk's approach where the polygon is first triangulated and then 3-colouring every triangle where each vertex has to be one of the three colours; where each colour forms a set of guards placed at these vertices are able to cover the whole polygon. Given this foundation the optimal sensor placement problem has grown by adding more constraints and making the model more reflective of true sensor abilities and limitations. 
+
+The applications range from, (like the AGP) monitoring and surveillance \parencite{bodorOptimalCameraPlacement2007}, object detection, motion capture \parencite{aissaouiDesigningCameraPlacement2018, zieglerOptimalCameraPlacement2023}, augmented and virtual reality systems \parencite{rahimianOptimalCameraPlacement2017}, to autonomous driving and assistance system \parencite{puligandlaMultiresolutionApproachLarge2022}. In these visual sensor networks, where tracking depends on marker/feature visibility, and the respective location needs to be determined from these markers need to be visible by at least two cameras in order to calculate their 3D position via triangulation \parencite{aissaouiDesigningCameraPlacement2018,zieglerOptimalCameraPlacement2023}. Furthermore, it has been shown that the sensor number, location and orientation have a significant impact on coverage and performance of the system in its ability to identify and monitor its target \parencite{zhouSensorPlacementOptimization2024}. However, this problem is NP-hard and combinatorial, meaning that the search-space is larg,e and the solution is measured via an objective function; it becomes difficult to find the optimal solution in a reasonable amount of time. Hence, since these problems fall within this category approximation algorithms that use heuristics will be explored to find an acceptable solution within a reasonable time. 
+
+
 Problem Statement + Applications:
-Art Gallery problem -> how many guards, wich can survey a full 360 degrees is the minimum to cover the room shaped as a simple polygon. Obvious assumptions of two-dimensions, full 360 degrees field of view, no limited range of sight. Thus, it can be extended to the camera placement problem by adding constraints 
-Marker based tracking so position of markers can e tracked \parencite{zieglerOptimalCameraPlacement2023} - in general markers must be visible by at least two cameras in order to calc their respective 3D positions via triangulation and thus motion can be tracked \parencite{aissaouiDesigningCameraPlacement2018}  
-Need application domains from notes: 
-VSNs (Visual Sensor Networks) are used in the following industries 
-1. surveillance \parencite{bodorOptimalCameraPlacement2007}
-2. object detection
-3. motion capture \parencite{aissaouiDesigningCameraPlacement2018, zieglerOptimalCameraPlacement2023}
-4. Augmented and virtual reality systems \parencite{rahimianOptimalCameraPlacement2017} 
-5. Autonomous Driving \parencite{puligandlaMultiresolutionApproachLarge2022}
-While building visual sensor networks, variables like sensor number, location, and orientation (i.e sensor placement optimisation problem) have a significant impact on coverage and performance of the system to identify and monitor the target \parencite{zhouSensorPlacementOptimization2024}. 
-Explain a multi-camera system + robust views 
-How does camera placement affect results
+
+
+
 Constraints: mounting, cost - potential wiring 
 Tension between coverage and accuracy
-Adding more cameras could assist in mitigating the issue of occlusion and having robust camera visibility, drives up cost and processing complexity. Usually the limited amount of cameras are arranged and iteractively configured by hand, which requires expertise, trial and error whihc can be time-consuming or sacrificial if a sub-par arrangement is settled on. Eventhough, anticpated motion of the target may not be known exactly beforehand configuraing a camera network based on metrics that minimise the effect of resolution degredation and triangulation could benefit the system.  
+Adding more cameras could assist in mitigating the issue of occlusion and having robust camera visibility, drives up cost and processing complexity. Usually the limited amount of cameras are arranged and iteractively configured by hand, which requires expertise or using the system's developer's best guess, trial and error which can be time-consuming or sacrificial if a sub-par arrangement is settled on. Thus the resulting localisation error is neither calculated nor considered. Eventhough, anticipated motion of the target may not be known exactly beforehand configuring a camera network based on metrics that minimise the effect of resolution degradation and triangulation could benefit the system.  
 
 Objectives of Optimization
 The configuration quality for 3D marker tracking and trinagulation is mostly affected y two main sources of error: marker visibility and triangulation accuracy. A marker should not be occluded by any obstacle, including itself, the marker must be within the cameras field of view, vissible given the camera's resolution and range of capture. At least two cameras should be arranged sufficiently non-parallel so that triangulation is well-conditioned. The least amount of cameras is required to achieve this to minimise cost.  
 - what has research optimised for: coverage based objectives (minimise blind spots, maximise visible area) vs accuracy-based (3D reconstruction quality, minimise resolution degredation, trinangulation accuracy).
-- Diagram for triangulation + definition 
+- Diagram for triangulation + definition (show that if the cameras are opposite eachother how the uncertainty increases for the localisation by the geometric dilution of precision (GDOP))
+- Need a quality measure to rank valid solutions  
+
+
 
 Different Methods to achieve and find an optimised camera config 
 Prior research has focused on two main factors that contribute to unaccurate reconstruction (1) minimise error due to inaccurate triangulation and (2) placing cameras to provide the best views in the presence of occlusion. 
@@ -54,6 +51,9 @@ no open-source implementation
 Contribution Statement: integrates res uncertainty (3D-ellipsoid) with dynamic occlusion. real-doded GA with guided initialisation validated against an OptiTrack commercial system 
 
 
+Justification of the GA:
+- is not prone to getting stuck in local optima as the Greedy Algorithm, due to the randomness introduced in several parts of the algorithm. Crossover method favours the parent with he highest fitness but still introduces randomness for children both inheriting genes from a weaker parent or in the mutation process that follows. 
+
 
 Method:
 - user to specify the number of cameras and possible camera locations for placement (mounting)
@@ -62,8 +62,42 @@ Method:
 - placement based on optimising for visibility without considering robustness to dynamic occlusion
 - placement based solely on robustness to occlusion without regard for degrading resolution
 - a combined cost function of the two concerns 
+- chose a 6 parameter representation at it is the minimum required number needed to specify the position and orientation of a rigid body in 3D space. 
+- camera model: used Peter Corke's CentralCamera which is a central-projecton perspective camera, a subclass of Camera. The coordinate system is X (right), Y (down), and z-axis is into the page aligning with the optical axis of the camera as seen below [insert image]. I inputted the parameters from the OpenMV camera sensor datasheet as inputs, I neglected both radial and tangental distortion which is reasonable considerimg the lens tech available today and with proper camera calibration. The sensor, $$C$$ is defined by a (insert number of inputs) I placed into the central camera -tuple $$[\hat{T_c}, N_c, f_c, S_c, P_c].$$ Where $$T_c$$ is the pose, as a homogenous transformation, of the camera in space. $$N_c$$ is the image plane resolution, $$f_c$$ the focal length in meters, $$S_c$$ is the pixel size, and $$P_c$$ is the principle point of the camera. The sensing range was determined experimentally.
+- Coverage/line of sight: 
+1. The Euclidian distance between the camera $$C$$ to the point $$i$$ is smaller than, or equal to, the sensing range of the camera $$c$$
+2. The angle between the camera $$C$$ and the point i is the field of view of the sensor 
+- The genetic algorithm developed here is guided: initial population, as well as an uodated mutation step every 10 iterations to reorient any cameras that may have mutate to face outwards form the workspace. 
 
+subsection- Algorithm design
+Given the number of sensors, mounting constraints, size and modality of workspace/ flight envelope, how many data points can be covered whilst mitigating the effects of resolution degradation and ensuring redundancy against dynamic occlusion.  Real-coded 
+Explain camera chromosome, gene and population [insert image]
+\textbf{Initialisation} 
+User-determined population size
+feasible faces of where the cameras can be mounted [insert picture of box around the flight envelope] 
+The flight envelope is partitioned based on the user specified amount of cameras [insert picture here as well]
+A face is randomly selected and then the camera is z-axis is oriented to face towards the section centre closest to where the camera is located.
 
+\textbf{Parent Selection Scheme}
+Selection probability is proportional to the better individuals 
+Roulette wheel- is conservative and has a significant selection pressure, there exist other methods like Tournament selection.
+If the selection pressure is too high, the algorithm may be stuck in local optima, and if the selection pressure is too low, the algorithm becomes very random and struggles to progress. This makes the design of a selection scheme an essential aspect of the GA design.
+Probability is determined by the Boltzmann rule distribution  $$p_i \propto exp(\frac{- \epsilon_i}{k_B*T} )$$
+
+\textbf{Crossover}
+Double-point crossover
+
+\textbf{Mutation}
+Provides the randomness of the child that promotes diversity in the population
+Every ten iterations the orientations are checked to see if they are seeing too few points (i.e is hey are facing away from the workspace or have been angled to be tangential to a face) if this is the case they are reoriented by the same methodology used in the initial population where they are pointed towards the section centre closest to them.
+Similarly, after mutation the bounds are checked from position to ensure that the cameras havent mutated to be out of the workspace mounting faces.
+
+\textbf{Elitism}
+Two population of children and parents are recombined to the original population size ensuring monotonic convergence 
+
+\textbf{Cost Functions}
+\textbf{Resolution Uncertainty}
+\textbf{Dynamic occlusion}
 
 
 
