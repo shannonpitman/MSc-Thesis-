@@ -11,7 +11,7 @@
 \usepackage[printonlyused]{acronym} % Include a list of acronyms (no page numbers in the list)
 \usepackage{rotating} % Allows tables and figures to be rotated
 \usepackage{hyperref} % Required for links and changing link options
-\usepackage{fontspec} % Required for specifying custom fonts in XeTeX
+\usepackage{lmodern} % Latin Modern fonts - pdfLaTeX
 \usepackage{microtype} % Slightly tweak font spacing for aesthetics
 \usepackage{csquotes}
 \usepackage[british]{babel} % Characters from British English Support
@@ -129,15 +129,9 @@
 %----------------------------------------------------------------------------------------
 %	SECTION HEADING STYLE
 %----------------------------------------------------------------------------------------
-\setsecheadstyle{\chapnamefont\fontsize{11}{14}\selectfont\bfseries}
-\setsubsecheadstyle{\chapnamefont\fontsize{11}{14}\selectfont\bfseries}
-\setsubsubsecheadstyle{\chapnamefont\fontsize{11}{14}\selectfont\bfseries}
-
-
-% Set section font to EB Garamond 12 All SC using memoir class commands
-% \setsecheadstyle{\fontspec{EB Garamond 12 All SC}\fontsize{12}{14}\selectfont}
-% \setsubsecheadstyle{\fontspec{EB Garamond 12 All SC}\fontsize{12}{14}\selectfont}
-% \setsubsubsecheadstyle{\fontspec{EB Garamond 12 All SC}\fontsize{12}{14}\selectfont}
+\setsecheadstyle{\normalfont\fontsize{11}{14}\selectfont\bfseries}
+\setsubsecheadstyle{\normalfont\fontsize{11}{14}\selectfont\bfseries}
+\setsubsubsecheadstyle{\normalfont\fontsize{11}{14}\selectfont\bfseries}
 
 
 %----------------------------------------------------------------------------------------
