@@ -163,19 +163,19 @@ This work contributes an exemplar that explains what each report section should 
 
 \cleartoverso % Force a break to an even page
 
-
 %----------------------------------------------------------------------------------------
 %	LIST OF EQUATIONS
 %----------------------------------------------------------------------------------------
 
+% Create a new list for equations (memoir syntax)
+\newlistof{listofequations}{equ}{List of Equations}
+\newlistentry{myequation}{equ}{0}
+\cftsetindents{myequation}{0em}{2.5em}
 
-\providecommand{\listequationsname}{List of Equations}
-\ifcsdef{myequations}{}{%
-  \newlistof{myequations}{equ}{\listequationsname}
-  \newcommand{\myequations}[1]{%
-    \addcontentsline{equ}{myequations}{\protect\numberline{\theequation}#1}\par}
-  \setlength{\cftmyequationsnumwidth}{2.5em}%
-}
+\newcommand{\myequation}[1]{%
+  \refstepcounter{myequation}
+  \addcontentsline{equ}{myequation}{\protect\numberline{\theequation}#1}}
+  
 %----------------------------------------------------------------------------------------
 %	ACRONYMS
 %----------------------------------------------------------------------------------------

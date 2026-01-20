@@ -57,17 +57,7 @@
 % Algorithims
 \usepackage[ruled]{algorithm2e} % Algorithm environment
 
-
-
-
-% Document structure and navigation
-\usepackage[toc,page]{appendix} % Appendix management
-\usepackage[bookmarksopen=true,
-		bookmarksopenlevel=0,
-		pdfusetitle,
-		hidelinks]{hyperref}   % Extensive support for hypertext
-\usepackage[noabbrev]{cleveref} % Intelligent cross-referencing
-
+% Bibliography
 % Bibliography
 \usepackage[backend=biber,
             style=ieee,
@@ -144,16 +134,15 @@
 %----------------------------------------------------------------------------------------
 %	MATH THEOREM DEFINITIONS
 %----------------------------------------------------------------------------------------
-
+\usepackage{amsthm}     % Theorem environments
 \theoremstyle{plain}
 \newtheorem{thm}{Theorem}[section] % Defines the theorem environment
 \newtheorem{prop}[thm]{Proposition} % Defines the proposition environment
-\newtheorem{proof}{Proof}[section] % Defines the proof environment
 \newtheorem{definition}{Definition}[section] % Defines the definition environment
 \newtheorem{example}{Example}[section] % Defines the example environment
 \newtheorem{rem}{Remark} % Defines the remark environment
 \newtheorem{note}{Note}[section] % Defines the note environment
-\usepackage{amsthm}     % Theorem environments
+
 %----------------------------------------------------------------------------------------
 %	CODE SNIPPET CONFIGURATION
 %----------------------------------------------------------------------------------------
