@@ -1,4 +1,3 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % MechatronicSystems.Group Latex Template, based on:
 % Maggi Memoir Thesis
 % XeLaTeX Template
@@ -56,7 +55,7 @@
 
 \newcommand{\department}{Department of Mechanical Engineering\xspace} % Department name
 
-\newcommand{\degree}{BSc (Eng) in Mechanical and Mechatronic Engineering}
+\newcommand{\degreetitle}{BSc (Eng) in Mechanical and Mechatronic Engineering}
 
 %------------------------------------------------
 % Fonts
@@ -81,7 +80,7 @@
 \par
 \hrulefill}
 
-\renewcommand{\maketitlehookc}{
+\renewcommand{\degreetitle}{
 % People details left, institution info right
 \noindent
 \begin{tabular*}{\textwidth}{@{} l @{\extracolsep{\fill}} r}
@@ -170,14 +169,13 @@ This work contributes an exemplar that explains what each report section should 
 %----------------------------------------------------------------------------------------
 
 
-%% To add a list of equations
-\newcommand{\listequationsname}{List of Equations}
-\newlistof{myequations}{equ}{\listequationsname}
-\newcommand{\myequations}[1]{%
-\addcontentsline{equ}{myequations}{\protect\numberline{\theequation}#1}\par}
-\setlength{\cftmyequationsnumwidth}{2.5em}%
-\cleartoverso % Force a break to an even page
-
+\providecommand{\listequationsname}{List of Equations}
+\ifcsdef{myequations}{}{%
+  \newlistof{myequations}{equ}{\listequationsname}
+  \newcommand{\myequations}[1]{%
+    \addcontentsline{equ}{myequations}{\protect\numberline{\theequation}#1}\par}
+  \setlength{\cftmyequationsnumwidth}{2.5em}%
+}
 %----------------------------------------------------------------------------------------
 %	ACRONYMS
 %----------------------------------------------------------------------------------------
