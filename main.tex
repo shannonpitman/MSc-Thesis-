@@ -40,9 +40,9 @@
 % Thesis Information
 \newcommand{\themonth}{September 2025} % The month of writing    
 
-\title{A (\emph{likely incomplete}) Guide to Writing Engineering Dissertations} % Thesis title
+\title{Development of an Optical Tracking System for Real-time Robotic Applications} % Thesis title
 
-\renewcommand{\author}{Shannon Pitman} 
+\author{Shannon Pitman} 
 
 \date{}
 
@@ -51,7 +51,7 @@
 
 \newcommand{\institution}{University of Cape Town\xspace} % University/institution name
 
-\newcommand{\reseachgroup}{\href{http://mechatronicsystems.group}{MechatronicsSystems.Group}\xspace} % University/institution name
+\newcommand{\researchgroup}{\href{http://mechatronicsystems.group}{MechatronicsSystems.Group}\xspace} % University/institution name
 
 \newcommand{\department}{Department of Mechanical Engineering\xspace} 
 
@@ -80,20 +80,22 @@
 \par
 \hrulefill}
 
-% \renewcommand{\degreetitle}{
-% % People details left, institution info right
-% \noindent
-% \begin{tabular*}{\textwidth}{@{} l @{\extracolsep{\fill}} r}
-%     \textbf{Author:} \author &  \reseachgroup \\
-%     \textbf{Supervisor:} \supervisor & \department\\
-%     \textbf{Date:} \themonth & \institution\\
-% \end{tabular*}
 
-% \vspace{1cm}
+\renewcommand{\maketitlehookc}{
+% People details left, institution info right
+\vspace{0.5cm}
+\noindent
+\begin{tabular*}{\textwidth}{@{} l @{\extracolsep{\fill}} r}
+    \textbf{Author:} \author &  \researchgroup \\
+    \textbf{Supervisor:} \supervisor & \department\\
+    \textbf{Date:} \themonth & \institution\\
+\end{tabular*}
 
-% \emph{Submitted in partial fulfilment of the requirements for the degree of} \\
-% \degree
-% }
+\vspace{1cm}
+
+\emph{Submitted in partial fulfilment of the requirements for the degree of} \\
+\degree
+}
 
 %----------------------------------------------------------------------------------------
 
