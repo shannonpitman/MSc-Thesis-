@@ -5,7 +5,6 @@
 \usepackage[T1]{fontenc} % Support for more character glyphs
 \usepackage{graphicx} % Required to include images
 \usepackage{color} % Required for custom colors
-\usepackage{amsmath,amssymb,theorem} % Math packages
 \usepackage{listings} % Required for including snippets of code
 \usepackage{booktabs} % Required for better horizontal rules in tables
 \usepackage{xspace} % Provides the ability to use an intelligent space which is used in \institution and \department
@@ -14,13 +13,67 @@
 \usepackage{hyperref} % Required for links and changing link options
 \usepackage{fontspec} % Required for specifying custom fonts in XeTeX
 \usepackage{microtype} % Slightly tweak font spacing for aesthetics
+\usepackage{csquotes}
+\usepackage[british]{babel} % Characters from British English Support
 
-% Bibliography configuration switched to biblatex/biber
-% Use IEEE style and enable natbib compatibility for existing \citep/\citet
-\usepackage[backend=bibtex,style=ieee,natbib=true]{biblatex}
+% Typography and spacing
+\usepackage{microtype}  % Refinements towards typographical perfection
+\usepackage{parskip}    % Layout with zero \parindent, non-zero \parskip
+\usepackage{setspace}   % Management of line spacing
+\usepackage{xspace}     % Define commands that appear not to eat spaces
+\usepackage{xcolor}     % Driver-independent color extensions
+\usepackage{geometry}   % Customize document dimensions
+\usepackage{datetime}   % Change format of \today
+\usepackage{lipsum}
+
+% Lists and environments
+\usepackage{enumitem}   % Control layout of itemize, enumerate, description
+\usepackage{etoolbox}   % Toolbox of programming facilities
+
+% Mathematics
+\usepackage{mathtools}  % Extension of amsmath, provides additional math tools
+\usepackage{amssymb}    % Extended math symbol collection
+\usepackage{siunitx}    % Comprehensive (SI) units package
+\usepackage{textcomp}   % Support for Text Companion fonts
+\usepackage{gensymb}    % Generic symbols for both text and math mode
+\usepackage{xfrac}      % Split-level fractions
+
+% Tables
+\usepackage{booktabs}   % Publication quality tables
+\usepackage{tabularx}   % Tabulars with adjustable-width columns
+\usepackage{tabularray} % Typeset Tabulars and Arrays with LATEX3
+\usepackage{longtable}  % Allow tables to flow over page boundaries
+\usepackage{multirow}   % Create tabular cells spanning multiple rows
+\usepackage{multicol}   % Create tabular cells spanning multiple columns
+
+% Figures and floats
+\usepackage{graphicx}   % Enhanced support for images
+\usepackage{float}      % Improved interface for floating objects
+\usepackage[labelfont=bf,justification=centering,footnotesize]{caption} % Captions
+\usepackage{subcaption} % Support for sub-captions
+\usepackage{pdfpages}   % Include PDF documents
+\usepackage{placeins}   % Keep floating objects in their place
+
+% Algorithims
+\usepackage[ruled]{algorithm2e} % Algorithm environment
+
+
+
+
+% Document structure and navigation
+\usepackage[toc,page]{appendix} % Appendix management
+\usepackage[bookmarksopen=true,
+		bookmarksopenlevel=0,
+		pdfusetitle,
+		hidelinks]{hyperref}   % Extensive support for hypertext
+\usepackage[noabbrev]{cleveref} % Intelligent cross-referencing
+
+% Bibliography
+\usepackage[backend=biber,
+            style=ieee,
+            urldate=long,
+            citestyle=numeric-comp]{biblatex}
 \addbibresource{main.bib}
-
-\hypersetup{colorlinks, breaklinks, linkcolor=black,citecolor=black,filecolor=black,urlcolor=black} % Set up hyperlinks including colors for references, urls and citations
 
 %\definecolor{c64}{rgb}{.063,0,.612} % Example color definition, the color can be used with the \color{name} command
 

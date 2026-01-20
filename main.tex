@@ -170,6 +170,20 @@ This work contributes an exemplar that explains what each report section should 
 
 \cleartoverso % Force a break to an even page
 
+
+%----------------------------------------------------------------------------------------
+%	LIST OF EQUATIONS
+%----------------------------------------------------------------------------------------
+
+
+%% To add a list of equations
+\newcommand{\listequationsname}{List of Equations}
+\newlistof{myequations}{equ}{\listequationsname}
+\newcommand{\myequations}[1]{%
+\addcontentsline{equ}{myequations}{\protect\numberline{\theequation}#1}\par}
+\setlength{\cftmyequationsnumwidth}{2.5em}%
+\cleartoverso % Force a break to an even page
+
 %----------------------------------------------------------------------------------------
 %	ACRONYMS
 %----------------------------------------------------------------------------------------
