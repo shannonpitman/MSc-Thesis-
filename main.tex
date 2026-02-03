@@ -178,15 +178,11 @@ This work contributes an exemplar that explains what each report section should 
   \refstepcounter{myequation}
   \addcontentsline{equ}{myequation}{\protect\numberline{\theequation}#1}}
 
-%----------------------------------------------------------------------------------------
-%	ACRONYMS
-%----------------------------------------------------------------------------------------
-
-\include{acronyms} % Include a List of Acronyms section using acronyms.tex where they are defined
 
 \cleartoverso % Force a break to an even page
 
-
+\include{Chapters/acronyms} % Acronyms
+\cleartoverso % Force a break to an even page
 %----------------------------------------------------------------------------------------
 %	CONTENT CHAPTERS
 %----------------------------------------------------------------------------------------
@@ -199,11 +195,13 @@ This work contributes an exemplar that explains what each report section should 
 
 \include{Chapters/introduction} % Include the introduction chapter
 \include{Chapters/literature_review} % Literature Review
+\include{Chapters/theory} % Theoretical Development
 \include{Chapters/methodology} % Methodology
 \include{Chapters/results} % Results/Findings
 \include{Chapters/discussion} % Discussion
 \include{Chapters/conclusions} % Conclusions
 \include{Chapters/recommendations} % Recommendations
+
 
 \chapterstyle{default} % Reset the chapter style back to the default used for non-content chapters
 

@@ -1,0 +1,40 @@
+\chapter{Theoretical Development}
+\label{chap:theory}
+
+\Section{Genetic Algorithms}
+Inspired by the process of natural selection, \gls{GA} are adaptive heuristic optimisation algorithms used to quickly find an optimal solution to search spaces that are large, unsmooth, multi-objective, and ill-defined. They belong to the broader class of evolutionary algorithms which harness the biological mechanisms of selection, crossover (mating), and mutation (diversity) to evolve a population of candidate solutions towards ones that have a higher fitness based on the objective function. Typically, the algorithm begins with a randomly generated population of individuals which are assessed for their fitness. During the selection stage, the fitter individiuals are chosen to, during the process of crossover, combine and produce offspring for the next generation. To ensure diversity in the search space (collection of candidate solutions), mutation is randomly applied to some individuals. This process is repeated over a number of generations until a stopping criterion is met, such as a maximum number of generations or convergence to a satisfactory solution.
+
+\Subsection{GA Terminology}
+\begin{itemize}
+    \item \textbf{Chromosome}:
+    \item \textbf{Gene}:
+    \item \textbf{Population}:
+    \item \textbf{Fitness function}:
+    \item \textbf{Generation}:
+    \item \textbf{Selection}:
+    \item \textbf{Crossover}:
+    \item \textbf{Mutation}:
+\end{itemize}
+
+\subsection{Encoding schemes}
+difference between binary encoding, gray code, real encoding, permutation encoding, variable length chromosomes
+
+
+\subsection{Selection Methods}
+Fitness proportionate selection: roulette-wheel selection, stochastic universal sampling
+rank-based selection
+tournament selection
+boltzmann selection
+elitism
+
+\subsection{Crossover Techniques}
+single-point crossover
+double point crossover
+parameterized uniform crossover
+
+\subsection{Parameters for GAs}
+Population size
+Crossover rate
+Mutation rate
+
+\subsection{Advantages over traditional optimisation methods}
