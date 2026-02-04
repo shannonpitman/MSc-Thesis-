@@ -177,11 +177,15 @@ This work contributes an exemplar that explains what each report section should 
 \newcommand{\myequation}[1]{%
   \refstepcounter{myequation}
   \addcontentsline{equ}{myequation}{\protect\numberline{\theequation}#1}}
-
-
 \cleartoverso % Force a break to an even page
 
-\include{Chapters/acronyms} % Acronyms
+%----------------------------------------------------------------------------------------
+%	LIST OF ACRONYMS
+%----------------------------------------------------------------------------------------
+
+\printglossary[type=abbreviations]
+\printglossary[type=symbols]
+\printglossary[type=main]
 \cleartoverso % Force a break to an even page
 %----------------------------------------------------------------------------------------
 %	CONTENT CHAPTERS
@@ -204,8 +208,6 @@ This work contributes an exemplar that explains what each report section should 
 
 
 \chapterstyle{default} % Reset the chapter style back to the default used for non-content chapters
-
-
 
 %----------------------------------------------------------------------------------------
 %	REFERENCES
