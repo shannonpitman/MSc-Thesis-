@@ -1,20 +1,33 @@
 \chapter{Theoretical Development}
 \label{chap:theory}
 
-\Section{Genetic Algorithms}
+\section{Genetic Algorithms}
 Inspired by the process of natural selection, \gls{GA} are adaptive heuristic optimisation algorithms used to quickly find an optimal solution to search spaces that are large, unsmooth, multi-objective, and ill-defined. They belong to the broader class of evolutionary algorithms which harness the biological mechanisms of selection, crossover (mating), and mutation (diversity) to evolve a population of candidate solutions towards ones that have a higher fitness based on the objective function. Typically, the algorithm begins with a randomly generated population of individuals which are assessed for their fitness. During the selection stage, the fitter individiuals are chosen to, during the process of crossover, combine and produce offspring for the next generation. To ensure diversity in the search space (collection of candidate solutions), mutation is randomly applied to some individuals. This process is repeated over a number of generations until a stopping criterion is met, such as a maximum number of generations or convergence to a satisfactory solution.
 
-\Subsection{GA Terminology}
-\begin{itemize}
-    \item \textbf{Chromosome}:
-    \item \textbf{Gene}:
-    \item \textbf{Population}:
-    \item \textbf{Fitness function}:
-    \item \textbf{Generation}:
-    \item \textbf{Selection}:
-    \item \textbf{Crossover}:
-    \item \textbf{Mutation}:
-\end{itemize}
+\subsection{GA Terminology}
+The language used to describe genetic algorithms borrows heavily from evolutionary biology. Table~\ref{tab:ga-terminology} defines these terms in both domains to clarify the analogy and establish consistent vocabulary for the sections that follow.
+
+\begin{table}[h]
+\centering
+\caption{Comparison of biological and genetic algorithm terminology.}
+\begin{tabularx}{\textwidth}{l X X}
+\toprule 
+Term & Biological Meaning & Genetic Algorithm Meaning \\
+\midrule 
+Chromosome & A structure of \gls{DNA} carrying genetic information & A complete candidate solution encoded in some representation, e.g bit strings \\
+Gene & A unit of heredity determining a specific trait & A single element or parameter within the candidate solution, e.g a bit \\
+Population & A group of interbreeding individuals of the same species & The set of candidate solutions existing at a given iteration \\
+Fitness & An organism's ability to survive and reproduce in its environment & An objective function quantifying how well a candidate solution achieves the desired goal \\
+Generation & All individuals born and living at approximately the same time & One complete iteration of the algorithm producing a new population \\
+Selection & Differential survival and reproduction due to heritable trait variation & An operator that chooses higher-performing individuals to serve as parents \\
+Crossover & Exchange of genetic material between homologous chromosomes during meiosis & An operator that combines portions of two parent solutions to create offspring \\
+Mutation & A random, heritable change in genetic sequence, ususally caused by a erroneous \gls{DNA} replication & An operator that randomly perturbs one or more genes in a solution \\
+\bottomrule
+\end{tabularx}
+\label{tab:ga-terminology}
+\end{table}
+
+This biological analogy provides useful intuition: just as natural selection refines a species over generations by favouring advantageous traits, genetic algorithms iteratively improve a population of solutions by favouring those with higher fitness. While genetic algorithms lack the biological complexity of true evolution, they do provide a productive conceptual framework. The effectiveness of this process depends on how solutions are represented, this is often reffered to as the encoding.
 
 \subsection{Encoding schemes}
 difference between binary encoding, gray code, real encoding, permutation encoding, variable length chromosomes
